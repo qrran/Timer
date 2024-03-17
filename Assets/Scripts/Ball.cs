@@ -5,10 +5,11 @@ using TimerLab;
 
 public class Ball : MonoBehaviour
 {
-    Timer destroyTimer;
-    // Start is called before the first frame update
-    void Start()
-    {
+	//ball destroys itself after certain time
+	Timer destroyTimer;
+	// Start is called before the first frame update
+	void Start()
+	{
 		destroyTimer = gameObject.AddComponent<Timer>();
 
 		// destroy ball after 10 sec
@@ -18,7 +19,7 @@ public class Ball : MonoBehaviour
 
 	// Update is called once per frame
 	void Update()
-    {
+	{
 		if (destroyTimer.CurrentTime() >= destroyTimer.GetDuration())
 		{
 			Destroy(gameObject);
